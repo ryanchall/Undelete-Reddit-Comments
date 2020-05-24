@@ -12,6 +12,6 @@
     "content_scripts": [{
         "matches": ["https://www.reddit.com/*/comments/*"],
         "run_at": "document_end",
-        "js": ["jquery-3.5.1.min.js", "script.js"]
+        "js": ["thirdParty/jquery-3.5.1.min.js", "script.js"]
     }]
 }
