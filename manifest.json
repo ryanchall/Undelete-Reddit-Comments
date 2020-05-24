@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "New Button",
+    "version": "0.1.0",
+
+    "description": "Adds a new button to Reddit comments. Placeholder for 'undelete'",
+
+    "browser_action": {
+        "default_title": "Add button on Reddit comments"
+    },
+
+    "content_scripts": [{
+        "matches": ["https://www.reddit.com/*/comments/*"],
+        "run_at": "document_end",
+        "js": ["jquery-3.5.1.min.js", "script.js"]
+    }]
+}
