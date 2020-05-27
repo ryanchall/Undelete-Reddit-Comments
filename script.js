@@ -2,12 +2,7 @@
  // WIP //
 /////////   
 
-try {
-    comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
-} catch (e) {
-    comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4").children; //might be doing nothing at all...
-    alert('IMPORTANT CATCH');
-}
+
 
 function main(comments) {
     return_var = false;
@@ -30,6 +25,12 @@ function main(comments) {
 window.addEventListener('load', pageFullyLoaded, false);
 function pageFullyLoaded(e) {
     window.setInterval(function(){
+        try {
+            comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
+        } catch (e) {
+            comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4").children; //might be doing nothing at all...
+            alert('IMPORTANT CATCH');
+        }
         main(comments);
         try {
             document.getElementById('get-deleted-content').onclick = function() {
