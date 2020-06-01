@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
-    "name": "Undelete Reddit",
-    "version": "0.1.1",
+    "name": "New Button",
+    "version": "0.1.0",
 
-    "description": "Adds a new button to Reddit comments. Will attempt to send an alert with the original comment.",
+    "description": "Adds a new button to Reddit comments. Placeholder for 'undelete'",
 
     "browser_action": {
-        "default_title": "Undelete Reddit"
+        "default_title": "Add button on Reddit comments"
     },
 
     "content_scripts": [{
