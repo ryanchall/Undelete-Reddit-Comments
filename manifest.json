@@ -8,7 +8,7 @@
     "browser_action": {
         "default_title": "ReReddit",
         "default_popup": "popup.html",
-        "default_icon": "rereddit.png"
+        "default_icon": "images/rereddit.png"
     },
 
     "content_scripts": [{
