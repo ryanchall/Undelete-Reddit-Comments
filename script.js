@@ -1,8 +1,10 @@
-  /////////
- // WIP //
-/////////   
+  ///////////////
+ // Ryan Hall //
+///////////////
 
-var comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
+try {
+    var comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
+} catch (e) {console.log("NO COMMENTS FOUND AT ALL");}
 
 function main(comments) {
     comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
@@ -42,14 +44,7 @@ function pageFullyLoaded(e) {
     }, 1000);
 }
 
-window.onload = function(){
-    try {
-        document.getElementById('get-deleted-content').onclick = function() {
-            get_deleted_content(this);
-            console.log('WHAT DOES THIS DO??');
-        }
-    } catch (e) {console.log('DELETE THIS ENTIRE onload FUNCTION THINGY I think');}
-}
+/* window.onload = function(){} */
 
 function get_deleted_content(undelete_button) {
     console.log('running get_deleted_content...');
