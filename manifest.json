@@ -1,12 +1,14 @@
 {
     "manifest_version": 2,
-    "name": "Undelete Reddit",
+    "name": "ReReddit",
     "version": "0.1.0",
 
-    "description": "Adds a new button to user-deleted Reddit comments, providing the functionality\nto 'undelete' the comment.",
+    "description": "Adds a new button to deleted/removed Reddit comments, providing the functionality to \"undelete\" the comment (view its past contents).",
 
     "browser_action": {
-        "default_title": "Undelete Reddit"
+        "default_title": "ReReddit",
+        "default_popup": "popup.html",
+        "default_icon": "rereddit.png"
     },
 
     "content_scripts": [{
