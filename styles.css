@@ -1,8 +1,8 @@
 @media (prefers-color-scheme: dark) {
 	* {
 		background-color: #29292e;
-		color: white;
-	}
+        color: white;
+    }
 }
 @media (prefers-color-scheme: light) {
 	* {
@@ -15,6 +15,18 @@ body {
 	font-family: Georgia, Verdana, sans-serif;
 }
 
-p {
+
+.link:hover {
+    cursor: pointer
+}
+
+.center {
     text-align: center;
+}
+
+  
+.popup-content {
+    /*margin: 15% auto; /* 15% from the top and centered */
+    padding: 0px 10px;
+    width: 200px;
 }
