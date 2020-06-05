@@ -12,8 +12,8 @@ function main(comments) {
     for(i=0; i<comments.length; i++) {
         var comment = comments[i].firstChild.firstChild.lastChild.lastChild.lastChild;
         try {
-            if ((comment.firstChild.innerHTML == "Comment deleted by user" || comment.firstChild.innerHTML == "Comment removed by moderator") && !comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button id="get-deleted-content" class="_374Hkkigy4E4srsI2WktEd">ATTEMPT to Reveal Deleted Comment</button>')) {
-                var my_HTML = '&nbsp;&nbsp;&nbsp;<button id="get-deleted-content" class="_374Hkkigy4E4srsI2WktEd">ATTEMPT to Reveal Deleted Comment</button>'
+            if ((comment.firstChild.innerHTML == "Comment deleted by user" || comment.firstChild.innerHTML == "Comment removed by moderator") && !comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button id="get-deleted-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Deleted Comment</button>')) {
+                var my_HTML = '&nbsp;&nbsp;&nbsp;<button id="get-deleted-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Deleted Comment</button>'
                 comment.innerHTML = comment.innerHTML + my_HTML
                 return_var = true
             }
