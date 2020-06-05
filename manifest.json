@@ -3,7 +3,7 @@
     "name": "ReReddit",
     "version": "0.1.0",
 
-    "description": "Adds a new button to deleted/removed Reddit comments, providing the functionality to \"undelete\" the comment (view its past contents).",
+    "description": "Adds a new button to deleted/removed Reddit comments, providing the functionality to \"undelete\" the comment (view its past contents)",
 
     "browser_action": {
         "default_title": "ReReddit",
