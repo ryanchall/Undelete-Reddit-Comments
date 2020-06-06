@@ -2,6 +2,7 @@
     "manifest_version": 2,
     "name": "ReReddit",
     "version": "0.1.0",
+    "permissions": ["activeTab"],
 
     "description": "Adds a new button to deleted/removed Reddit comments, providing the functionality to \"undelete\" the comment (view its past contents)",
 
