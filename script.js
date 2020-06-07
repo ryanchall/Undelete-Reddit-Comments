@@ -4,7 +4,9 @@
 
 try {
     var comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
-} catch (e) {console.log("NO COMMENTS FOUND AT ALL");}
+} catch (e) {
+    //console.log("NO COMMENTS FOUND AT ALL");
+}
 
 function main(comments) {
     comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
@@ -17,12 +19,14 @@ function main(comments) {
                 comment.innerHTML = comment.innerHTML + my_HTML
                 return_var = true
             }
-        } catch (e) {console.log('CATCH');}
+        } catch (e) {
+            //console.log('CATCH');
+        }
     }
     if (return_var == false) {
-        console.log('No comments to undelete??');
+        //console.log('No comments to undelete??');
     } else {
-        console.log('At least one button added??');
+        //console.log('At least one button added??');
     }
     return return_var;
 }
@@ -49,10 +53,10 @@ function get_deleted_content(undelete_button) {
     function reqListener () {
         response = this.response;
         try {
-            console.log('Deleted comment:\n\n' + response.data[0].body);
+            //console.log('Deleted comment:\n\n' + response.data[0].body);
             alert('Deleted comment:\n\n' + response.data[0].body);
         } catch (e) {
-            console.log("DELETED TOO QUICKLY");
+            //console.log("DELETED TOO QUICKLY");
             alert("DELETED TOO QUICKLY");
         }
     }
