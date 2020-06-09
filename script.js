@@ -53,11 +53,15 @@ function get_deleted_content(undelete_button) {
     function reqListener () {
         response = this.response;
         try {
-            //console.log('Deleted comment:\n\n' + response.data[0].body);
-            alert('Deleted comment:\n\n' + response.data[0].body);
+            if (response.data[0].body == '[deleted]') {
+                alert("DELETED TOO QUICKLY");
+            } else if (response.data[0].body == '[removed]') {
+                alert("REMOVED TOO QUICKLY");
+            } else {
+                alert('Deleted comment:\n\n' + response.data[0].body);
+            }
         } catch (e) {
-            //console.log("DELETED TOO QUICKLY");
-            alert("DELETED TOO QUICKLY");
+            alert("DELETED OR REMOVED TOO QUICKLY");
         }
     }
     var req = new XMLHttpRequest();
