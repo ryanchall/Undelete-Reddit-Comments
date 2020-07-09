@@ -59,6 +59,7 @@ function get_deleted_content(undelete_button) {
                 alert("REMOVED TOO QUICKLY");
             } else {
                 alert('Deleted comment:\n\n' + response.data[0].body);
+                console.log('Deleted comment:\n\n' + response.data[0].body);
             }
         } catch (e) {
             alert("DELETED OR REMOVED TOO QUICKLY");
