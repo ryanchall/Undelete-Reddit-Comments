@@ -23,11 +23,13 @@ function main(comments) {
             //console.log('CATCH');
         }
     }
+    /*
     if (return_var == false) {
         //console.log('No comments to undelete??');
     } else {
         //console.log('At least one button added??');
     }
+    */
     return return_var;
 }
 
