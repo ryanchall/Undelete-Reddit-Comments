@@ -1,14 +1,14 @@
 {
     "manifest_version": 2,
     "name": "ReReddit",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "icons": {
       "16": "images/rereddit_16.png",
       "48": "images/rereddit_48.png",
       "128": "images/rereddit_128.png"
     },
     
-    "description": "Adds a new button to deleted/removed Reddit comments, providing the functionality to \"undelete\" the comment (view its past contents)",
+    "description": "Adds a new button to all Reddit comments, providing the functionality to \"undelete\" or \"unedit\" comments (view their past contents)",
 
     "browser_action": {
         "default_title": "ReReddit",

@@ -12,7 +12,7 @@ function main(comments) {
     comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
     var return_var = false;
     for(i=0; i<comments.length; i++) {
-        var comment = comments[i].firstChild.firstChild.firstChild.lastChild.lastChild;
+        var comment = comments[i].firstChild.firstChild; //.firstChild.lastChild.lastChild;
         comment = comment.getElementsByClassName("_1S45SPAIb30fsXtEcKPSdt _3ezOJqKdLbgkHsXcfvS5SA")[0];
         try {
             if (!comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button class="get-original-content _374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
