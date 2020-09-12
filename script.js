@@ -14,11 +14,9 @@ function main(comments) {
     for(i=0; i<comments.length; i++) {
         var comment = comments[i].firstChild.firstChild.firstChild.lastChild.lastChild;
         comment = comment.getElementsByClassName("_1S45SPAIb30fsXtEcKPSdt _3ezOJqKdLbgkHsXcfvS5SA")[0];
-        //console.log(comment);
         try {
-            //if ((comment.firstChild.innerHTML == "Comment deleted by user" || comment.firstChild.innerHTML == "Comment removed by moderator") && !comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button id="get-original-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
-            if (!comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button id="get-original-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
-                var my_HTML = '&nbsp;&nbsp;&nbsp;<button id="get-original-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>'
+            if (!comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button class="get-original-content _374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
+                var my_HTML = '&nbsp;&nbsp;&nbsp;<button class="get-original-content _374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>'
                 comment.innerHTML = comment.innerHTML + my_HTML
                 return_var = true
             }
@@ -35,17 +33,19 @@ function pageFullyLoaded(e) {
         try {
             comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
             main(comments);
-            document.getElementById('get-original-content').onclick = function() {
-                console.log("BUTTON PRESSED");
-                get_deleted_content(this);
+            comments_to_revert =  document.getElementsByClassName('get-original-content')
+            for (var i = 0; i < comments_to_revert.length; i++) {
+                comments_to_revert[i].onclick = function() {
+                    console.log("BUTTON PRESSED");
+                    get_deleted_content(this, 5000);
+                }
             }
         } catch (e) {}
     }, 1000);
 }
 
-/* window.onload = function(){} */
 
-function get_deleted_content(undelete_button) {
+function get_deleted_content(undelete_button, timeout) {
     //console.log('running get_deleted_content...');
     var id = undelete_button.parentElement.parentElement.parentElement.parentElement.id;
     console.log('Finding deleted content from comment with ID ' + id);
@@ -61,7 +61,7 @@ function get_deleted_content(undelete_button) {
                 alert("REMOVED TOO QUICKLY");
             } else {
                 console.log('Deleted comment:\n\n' + response.data[0].body);
-                alert('Deleted comment:\n\n' + response.data[0].body);
+                alert('To copy the text, open the console\nDeleted comment:\n\n' + response.data[0].body);
             }
         } catch (e) {
             console.log("DELETED OR REMOVED TOO QUICKLY");
@@ -72,9 +72,12 @@ function get_deleted_content(undelete_button) {
     req.addEventListener("load", reqListener);
     req.responseType = 'json';
     req.open("GET", requestURL);
-    req.timeout = 5000;
+    req.timeout = timeout;
     req.ontimeout = function(e) {
-        console.log('API to retrieve content timed out (5 seconds). This is a Pushshift server issue; there is nothing I can do. Sorry chaps.');
+        console.log('API to retrieve content timed out (default 5 seconds). Sorry pal. No amount of optimization on my end will make a difference—this is from the Pushshift servers (which are amazing! most of the time)');
+        if (confirm('API to retrieve content timed out (default 5 seconds). To try again with a 15 second timeout, click "OK". To cancel, click "Cancel."\n\nIf a 15 second timeout fails, there is likely an issue with the Pushshift servers from which this content is retrieved. Try again later.')) {
+            get_deleted_content(undelete_button, 15000)
+        }
     }
     req.send();
 }
@@ -82,4 +85,4 @@ function get_deleted_content(undelete_button) {
 
 // CURRENT ISSUE(S)
 
-// Children comments might not get undeleted?
+// None known! Although I need to add support for old reddit.
