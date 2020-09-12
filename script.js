@@ -85,4 +85,7 @@ function get_deleted_content(undelete_button, timeout) {
 
 // CURRENT ISSUE(S)
 
-// None known! Although I need to add support for old reddit.
+// When upvoting or downvoting, the disaplyed "score" (upvotes vs downvotes) is supposed to change by one (or two if you change from up to down or vice versa).
+//	The number does not appear to change. This does not affect the actual vote and any upvote/downvote will be properly recorded.
+//	This is merely a tiny UI bug, and given Reddit's vote fuzzing it really doesn't matter anyway.
+//	Obviously I'll fix it eventually but it's not a priority.
