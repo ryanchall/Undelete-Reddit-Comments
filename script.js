@@ -16,6 +16,7 @@ function main(comments) {
         comment = comment.getElementsByClassName("_1S45SPAIb30fsXtEcKPSdt _3ezOJqKdLbgkHsXcfvS5SA")[0];
         //console.log(comment);
         try {
+            //if ((comment.firstChild.innerHTML == "Comment deleted by user" || comment.firstChild.innerHTML == "Comment removed by moderator") && !comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button id="get-original-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
             if (!comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button id="get-original-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
                 var my_HTML = '&nbsp;&nbsp;&nbsp;<button id="get-original-content" class="_374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>'
                 comment.innerHTML = comment.innerHTML + my_HTML
