@@ -15,7 +15,7 @@ function main(comments) {
         var comment = comments[i].firstChild.firstChild; //.firstChild.lastChild.lastChild;
         comment = comment.getElementsByClassName("_1S45SPAIb30fsXtEcKPSdt _3ezOJqKdLbgkHsXcfvS5SA")[0];
         try {
-            if (!comment.innerHTML.includes('&nbsp;&nbsp;&nbsp;<button class="get-original-content _374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>')) {
+            if (!comment.innerHTML.includes('>Reveal Original Comment</button>')) {
                 var my_HTML = '&nbsp;&nbsp;&nbsp;<button class="get-original-content _374Hkkigy4E4srsI2WktEd">Reveal Original Comment</button>'
                 comment.innerHTML = comment.innerHTML + my_HTML
                 return_var = true
