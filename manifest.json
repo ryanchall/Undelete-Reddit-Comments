@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ReReddit",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "icons": {
       "16": "images/rereddit_16.png",
       "48": "images/rereddit_48.png",
