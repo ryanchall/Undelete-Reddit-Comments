@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ReRedd",
-    "version": "0.1.4",
+    "version": "0.1.0",
     "icons": {
       "16": "images/reredd_16.png",
       "48": "images/reredd_48.png",
