@@ -31,10 +31,13 @@ window.addEventListener('load', pageFullyLoaded, false);
 function pageFullyLoaded(e) {
     window.setInterval(function(){
         try {
+			//console.log("start try block...");
             comments = document.getElementsByClassName("_1YCqQVO-9r-Up6QPB9H6_4 _1YCqQVO-9r-Up6QPB9H6_4")[0].children;
             main(comments);
             comments_to_revert =  document.getElementsByClassName('get-original-content')
+			//console.log("start for loop...");
             for (var i = 0; i < comments_to_revert.length; i++) {
+				//console.log("for");
                 comments_to_revert[i].onclick = function() {
                     console.log("BUTTON PRESSED");
                     get_deleted_content(this, 5000);
